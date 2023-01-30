@@ -1,7 +1,7 @@
 import os
 import hashlib
 import sys
-
+from datetime import datetime
 
 def fill_string(string, length):
     return string.ljust(length)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     diff_files = []
     same_files = []
     try:
-        print(f"Start comparison between {folder1} and {folder2}")
+        print(f"""{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} :: Start comparison between {folder1} and {folder2}""")
         # Iterate through all the files in both folders
         for root, dirs, files in os.walk(folder1):
             for file in files:
@@ -50,13 +50,13 @@ if __name__ == "__main__":
                 elif (get_hash(file_path1) == get_hash(file_path2) and get_hash(file_path2) != None):
                     same_files.append(
                         f"""{fill_string(file_path1, 200)} => hash({get_hash(file_path1)}, {get_hash(file_path2)})""")
-        print("End comparison")
+        print(f"""{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} :: End comparison""")
         # Save the list of different files to a file
         write_array_to_file("./result/notsame.txt", diff_files)
 
         # Save the list of different files to a file
         write_array_to_file("./result/same.txt", same_files)
 
-        print("finished")
+        print(f"""{datetime.now().strftime("%Y-%m-%d %H:%M:%S")} :: Finished""")
     except Exception as error:
         print(error)
