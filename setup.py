@@ -7,7 +7,7 @@ requirements = []
 
 setup(
     name="compare-hash",
-    version="0.0.1",
+    version="0.0.2",
     author="jaytrairat",
     author_email="jaytrairat@outlook.com",
     description="Compare the contents of two folders",

@@ -2,7 +2,6 @@ import os
 import hashlib
 import argparse
 from datetime import datetime
-from tqdm import tqdm
 
 
 def fill_string(string, length):
