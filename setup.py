@@ -7,7 +7,7 @@ requirements = []
 
 setup(
     name="compare-hash",
-    version="0.0.3",
+    version="0.0.4",
     author="jaytrairat",
     author_email="jaytrairat@outlook.com",
     description="Compare the contents of two folders",
@@ -17,7 +17,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'compare-hash = compare_hash.main:main',
+            'compare-hash = compare_hash.compare_hash:main',
         ],
     },
     install_requires=requirements,
